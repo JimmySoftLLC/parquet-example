@@ -1,0 +1,1194 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## Parquet\nA file type that is a hybrid of columns and row.",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:25:18.736",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eParquet\u003c/h2\u003e\n\u003cp\u003eA file type that is a hybrid of columns and row.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628694861764_301386144",
+      "id": "paragraph_1628694861764_301386144",
+      "dateCreated": "2021-08-11 15:14:21.764",
+      "dateStarted": "2021-08-11 18:25:18.739",
+      "dateFinished": "2021-08-11 18:25:21.192",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nspark.read.option(\"header\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\").printSchema()\nval df \u003d spark.read.option(\"header\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\")\nval dfView \u003d df.select(\"*\")\ndfView.createOrReplaceTempView(\"df\")\nprintln(\"Created View for df\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:25:24.114",
+      "progress": 100,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- ID: string (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: string (nullable \u003d true)\n\nCreated View for df\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: string, Store: string ... 3 more fields]\n\u001b[1m\u001b[34mdfView\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: string, Store: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d0"
+            },
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d1"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628694973539_180340326",
+      "id": "paragraph_1628694973539_180340326",
+      "dateCreated": "2021-08-11 15:16:13.539",
+      "dateStarted": "2021-08-11 18:25:24.133",
+      "dateFinished": "2021-08-11 18:25:39.665",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.sql\nselect *\nfrom df",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:25:43.081",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "ID": "string",
+                      "Store": "string",
+                      "CrustDescription": "string",
+                      "Topping": "string",
+                      "Diameter": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "ID\tStore\tCrustDescription\tTopping\tDiameter\n1\tDominos\tThinNCrispy\tSupreme\t29.4\n2\tDominos\tThinNCrispy\tBBQMeatlovers\t29.63\n3\tDominos\tDeepPan\tHawaiian\t27.06\n4\tDominos\tThinNCrispy\tSupreme\t27.45\n5\tDominos\tClassicCrust\tHawaiian\t26.59\n6\tDominos\tDeepPan\tBBQMeatlovers\t27.16\n7\tEagleBoys\tMidCrust\tSuperSupremo\t29.15\n8\tEagleBoys\tDeepPan\tHawaiian\t28.78\n9\tEagleBoys\tThinCrust\tBBQMeatlovers\t30.05\n10\tEagleBoys\tDeepPan\tBBQMeatlovers\t29.38\n11\tEagleBoys\tThinCrust\tSuperSupremo\t29.14\n12\tEagleBoys\tMidCrust\tHawaiian\t29.24\n13\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.97\n14\tEagleBoys\tThinCrust\tHawaiian\t29.98\n15\tEagleBoys\tMidCrust\tHawaiian\t28.93\n16\tEagleBoys\tThinCrust\tSuperSupremo\t29.47\n17\tEagleBoys\tThinCrust\tSuperSupremo\t30\n18\tEagleBoys\tThinCrust\tHawaiian\t30.01\n19\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.66\n20\tEagleBoys\tThinCrust\tHawaiian\t30.44\n21\tDominos\tThinNCrispy\tSupreme\t26.38\n22\tDominos\tThinNCrispy\tHawaiian\t28.86\n23\tDominos\tDeepPan\tBBQMeatlovers\t26.6\n24\tDominos\tClassicCrust\tHawaiian\t26.65\n25\tDominos\tDeepPan\tSupreme\t26.5\n26\tDominos\tClassicCrust\tSupreme\t26.55\n27\tDominos\tDeepPan\tSupreme\t26.64\n28\tDominos\tClassicCrust\tBBQMeatlovers\t26.15\n29\tDominos\tThinNCrispy\tHawaiian\t28.92\n30\tDominos\tDeepPan\tSupreme\t26.87\n31\tDominos\tClassicCrust\tBBQMeatlovers\t26.56\n32\tDominos\tClassicCrust\tHawaiian\t26.65\n33\tDominos\tDeepPan\tSupreme\t26.61\n34\tDominos\tThinNCrispy\tHawaiian\t28.75\n35\tDominos\tThinNCrispy\tSupreme\t29.33\n36\tDominos\tThinNCrispy\tBBQMeatlovers\t29\n37\tDominos\tDeepPan\tHawaiian\t26.34\n38\tDominos\tClassicCrust\tBBQMeatlovers\t27.2\n39\tDominos\tClassicCrust\tBBQMeatlovers\t26.61\n40\tEagleBoys\tDeepPan\tSuperSupremo\t28.73\n41\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.48\n42\tEagleBoys\tDeepPan\tSuperSupremo\t29.01\n43\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.73\n44\tEagleBoys\tMidCrust\tHawaiian\t28.6\n45\tEagleBoys\tDeepPan\tHawaiian\t29.59\n46\tEagleBoys\tDeepPan\tSuperSupremo\t29.04\n47\tEagleBoys\tMidCrust\tBBQMeatlovers\t29.03\n48\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.75\n49\tEagleBoys\tDeepPan\tSuperSupremo\t28.95\n50\tEagleBoys\tDeepPan\tBBQMeatlovers\t29.38\n51\tEagleBoys\tMidCrust\tSuperSupremo\t28.72\n52\tEagleBoys\tDeepPan\tSuperSupremo\t28.6\n53\tEagleBoys\tThinCrust\tHawaiian\t29.9\n54\tEagleBoys\tThinCrust\tHawaiian\t29.4\n55\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.99\n56\tDominos\tDeepPan\tBBQMeatlovers\t25.98\n57\tDominos\tThinNCrispy\tHawaiian\t29.04\n58\tDominos\tThinNCrispy\tHawaiian\t29.01\n59\tDominos\tDeepPan\tSupreme\t26.67\n60\tDominos\tClassicCrust\tBBQMeatlovers\t26.97\n61\tDominos\tThinNCrispy\tHawaiian\t29.37\n62\tDominos\tDeepPan\tSupreme\t26.09\n63\tDominos\tThinNCrispy\tSupreme\t29.32\n64\tDominos\tDeepPan\tSupreme\t27.12\n65\tDominos\tDeepPan\tBBQMeatlovers\t26.37\n66\tEagleBoys\tThinCrust\tHawaiian\t30.35\n67\tEagleBoys\tMidCrust\tSuperSupremo\t29.08\n68\tEagleBoys\tDeepPan\tHawaiian\t28.29\n69\tEagleBoys\tDeepPan\tSuperSupremo\t28.97\n70\tDominos\tClassicCrust\tSupreme\t26.83\n71\tDominos\tDeepPan\tHawaiian\t26.74\n72\tEagleBoys\tDeepPan\tHawaiian\t29.82\n73\tDominos\tThinNCrispy\tBBQMeatlovers\t28.67\n74\tDominos\tThinNCrispy\tBBQMeatlovers\t29.11\n75\tDominos\tDeepPan\tHawaiian\t26.45\n76\tDominos\tClassicCrust\tSupreme\t27.04\n77\tDominos\tClassicCrust\tBBQMeatlovers\t26.93\n78\tDominos\tClassicCrust\tBBQMeatlovers\t26.41\n79\tDominos\tThinNCrispy\tHawaiian\t29.19\n80\tEagleBoys\tThinCrust\tHawaiian\t29.42\n81\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.65\n82\tEagleBoys\tThinCrust\tSuperSupremo\t30.51\n83\tEagleBoys\tMidCrust\tHawaiian\t29.32\n84\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.68\n85\tDominos\tThinNCrispy\tHawaiian\t29.66\n86\tDominos\tThinNCrispy\tSupreme\t29.17\n87\tDominos\tClassicCrust\tHawaiian\t26.78\n88\tDominos\tDeepPan\tBBQMeatlovers\t26.58\n89\tDominos\tClassicCrust\tBBQMeatlovers\t27.27\n90\tDominos\tDeepPan\tSupreme\t27.14\n91\tEagleBoys\tDeepPan\tSuperSupremo\t28.98\n92\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.43\n93\tEagleBoys\tMidCrust\tSuperSupremo\t28.54\n94\tEagleBoys\tMidCrust\tHawaiian\t28.8\n95\tEagleBoys\tMidCrust\tBBQMeatlovers\t29.47\n96\tEagleBoys\tMidCrust\tBBQMeatlovers\t29.38\n97\tEagleBoys\tThinCrust\tHawaiian\t28.54\n98\tEagleBoys\tDeepPan\tHawaiian\t29.68\n99\tEagleBoys\tMidCrust\tBBQMeatlovers\t29.19\n100\tEagleBoys\tMidCrust\tHawaiian\t28.79\n101\tEagleBoys\tThinCrust\tSuperSupremo\t30.08\n102\tEagleBoys\tThinCrust\tSuperSupremo\t29.4\n103\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.63\n104\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.76\n105\tEagleBoys\tDeepPan\tSuperSupremo\t28.76\n106\tEagleBoys\tThinCrust\tHawaiian\t30.31\n107\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.86\n108\tDominos\tClassicCrust\tSupreme\t27.04\n109\tDominos\tThinNCrispy\tBBQMeatlovers\t28.71\n110\tDominos\tDeepPan\tHawaiian\t27\n111\tDominos\tClassicCrust\tHawaiian\t26.77\n112\tDominos\tThinNCrispy\tSupreme\t29.19\n113\tDominos\tDeepPan\tBBQMeatlovers\t26.59\n114\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.48\n115\tEagleBoys\tMidCrust\tHawaiian\t28.15\n116\tEagleBoys\tDeepPan\tSuperSupremo\t28.98\n117\tEagleBoys\tThinCrust\tHawaiian\t29.91\n118\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.94\n119\tEagleBoys\tDeepPan\tBBQMeatlovers\t29.38\n120\tEagleBoys\tDeepPan\tHawaiian\t28.86\n121\tEagleBoys\tMidCrust\tSuperSupremo\t28.47\n122\tEagleBoys\tThinCrust\tSuperSupremo\t29.4\n123\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.85\n124\tEagleBoys\tDeepPan\tSuperSupremo\t29.35\n125\tEagleBoys\tThinCrust\tHawaiian\t30.17\n126\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.54\n127\tDominos\tThinNCrispy\tHawaiian\t28.95\n128\tEagleBoys\tMidCrust\tSuperSupremo\t26.58\n129\tDominos\tClassicCrust\tHawaiian\t26.7\n130\tDominos\tClassicCrust\tBBQMeatlovers\t25.51\n131\tDominos\tThinNCrispy\tHawaiian\t29.09\n132\tEagleBoys\tDeepPan\tHawaiian\t29.92\n133\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.34\n134\tEagleBoys\tThinCrust\tBBQMeatlovers\t30.67\n135\tEagleBoys\tDeepPan\tHawaiian\t29.21\n136\tEagleBoys\tMidCrust\tSuperSupremo\t29.08\n137\tDominos\tDeepPan\tSupreme\t26.26\n138\tDominos\tThinNCrispy\tBBQMeatlovers\t29.43\n139\tDominos\tClassicCrust\tBBQMeatlovers\t26.78\n140\tDominos\tClassicCrust\tBBQMeatlovers\t26.28\n141\tDominos\tThinNCrispy\tHawaiian\t29.21\n142\tDominos\tDeepPan\tSupreme\t26.16\n143\tDominos\tClassicCrust\tBBQMeatlovers\t26.47\n144\tDominos\tClassicCrust\tBBQMeatlovers\t26.71\n145\tDominos\tDeepPan\tSupreme\t26.7\n146\tDominos\tThinNCrispy\tHawaiian\t29.14\n147\tDominos\tThinNCrispy\tSupreme\t28.78\n148\tDominos\tDeepPan\tBBQMeatlovers\t26.73\n149\tDominos\tClassicCrust\tHawaiian\t26.28\n150\tDominos\tDeepPan\tHawaiian\t26.42\n151\tEagleBoys\tMidCrust\tSuperSupremo\t28.42\n152\tEagleBoys\tThinCrust\tSuperSupremo\t31.06\n153\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.68\n154\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.34\n155\tEagleBoys\tMidCrust\tSuperSupremo\t29.01\n156\tEagleBoys\tDeepPan\tHawaiian\t29.16\n157\tEagleBoys\tDeepPan\tBBQMeatlovers\t29.53\n158\tEagleBoys\tThinCrust\tSuperSupremo\t29.51\n159\tEagleBoys\tThinCrust\tBBQMeatlovers\t28.75\n160\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.19\n161\tEagleBoys\tMidCrust\tHawaiian\t28.98\n162\tEagleBoys\tThinCrust\tSuperSupremo\t29.57\n163\tEagleBoys\tThinCrust\tSuperSupremo\t29.27\n164\tEagleBoys\tMidCrust\tSuperSupremo\t28.8\n165\tEagleBoys\tDeepPan\tHawaiian\t28.48\n166\tEagleBoys\tMidCrust\tHawaiian\t28.2\n167\tEagleBoys\tDeepPan\tHawaiian\t29.04\n168\tEagleBoys\tMidCrust\tSuperSupremo\t28.79\n169\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.68\n170\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.51\n171\tEagleBoys\tMidCrust\tHawaiian\t28.93\n172\tEagleBoys\tDeepPan\tHawaiian\t29.19\n173\tEagleBoys\tDeepPan\tBBQMeatlovers\t28.61\n174\tEagleBoys\tMidCrust\tHawaiian\t28.29\n175\tDominos\tDeepPan\tHawaiian\t26.48\n176\tDominos\tThinNCrispy\tSupreme\t29.33\n177\tDominos\tClassicCrust\tHawaiian\t26.58\n178\tDominos\tDeepPan\tBBQMeatlovers\t26.27\n179\tDominos\tClassicCrust\tHawaiian\t26.65\n180\tDominos\tClassicCrust\tSupreme\t27.27\n181\tDominos\tDeepPan\tHawaiian\t27.04\n182\tDominos\tClassicCrust\tSupreme\t28.9\n183\tDominos\tClassicCrust\tHawaiian\t27.15\n184\tDominos\tDeepPan\tBBQMeatlovers\t27.22\n185\tDominos\tThinNCrispy\tSupreme\t29.14\n186\tDominos\tThinNCrispy\tSupreme\t29.23\n187\tDominos\tClassicCrust\tHawaiian\t26.64\n188\tDominos\tThinNCrispy\tBBQMeatlovers\t28.82\n189\tDominos\tDeepPan\tBBQMeatlovers\t26.77\n190\tDominos\tThinNCrispy\tSupreme\t28.32\n191\tEagleBoys\tDeepPan\tHawaiian\t29\n194\tEagleBoys\tDeepPan\tBBQMeatlovers\t29.78\n195\tEagleBoys\tMidCrust\tHawaiian\t29.81\n196\tEagleBoys\tThinCrust\tSuperSupremo\t29.86\n197\tDominos\tClassicCrust\tSupreme\t27.12\n198\tDominos\tDeepPan\tHawaiian\t26.55\n199\tDominos\tClassicCrust\tHawaiian\t26.53\n200\tDominos\tDeepPan\tBBQMeatlovers\t26.77\n201\tDominos\tThinNCrispy\tBBQMeatlovers\t28.64\n202\tDominos\tClassicCrust\tSupreme\t27.05\n203\tDominos\tDeepPan\tHawaiian\t26.7\n204\tDominos\tThinNCrispy\tBBQMeatlovers\t28.52\n205\tDominos\tThinNCrispy\tSupreme\t28.44\n206\tDominos\tThinNCrispy\tBBQMeatlovers\t29.41\n207\tDominos\tClassicCrust\tSupreme\t26.97\n208\tDominos\tDeepPan\tBBQMeatlovers\t26.6\n209\tDominos\tClassicCrust\tSupreme\t27.52\n210\tDominos\tThinNCrispy\tBBQMeatlovers\t27.04\n211\tEagleBoys\tDeepPan\tHawaiian\t29.3\n212\tEagleBoys\tThinCrust\tBBQMeatlovers\t30.16\n213\tEagleBoys\tMidCrust\tHawaiian\t28.79\n214\tEagleBoys\tThinCrust\tSuperSupremo\t29.45\n215\tEagleBoys\tDeepPan\tHawaiian\t28.77\n216\tEagleBoys\tMidCrust\tSuperSupremo\t28.36\n217\tDominos\tThinNCrispy\tBBQMeatlovers\t29.04\n218\tDominos\tDeepPan\tHawaiian\t26.76\n219\tDominos\tClassicCrust\tSupreme\t26.79\n220\tEagleBoys\tDeepPan\tHawaiian\t29.34\n221\tEagleBoys\tMidCrust\tSuperSupremo\t28.96\n222\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.71\n223\tDominos\tClassicCrust\tHawaiian\t26.3\n224\tDominos\tDeepPan\tHawaiian\t26.6\n225\tDominos\tClassicCrust\tSupreme\t26.54\n226\tDominos\tThinNCrispy\tBBQMeatlovers\t28.94\n227\tDominos\tThinNCrispy\tHawaiian\t28.86\n228\tDominos\tDeepPan\tSupreme\t26.7\n229\tDominos\tThinNCrispy\tHawaiian\t25.58\n230\tDominos\tDeepPan\tSupreme\t28.79\n231\tDominos\tClassicCrust\tBBQMeatlovers\t26.6\n232\tEagleBoys\tThinCrust\tHawaiian\t28.71\n233\tEagleBoys\tDeepPan\tSuperSupremo\t30.37\n234\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.63\n235\tEagleBoys\tDeepPan\tBBQMeatlovers\t29.09\n236\tEagleBoys\tMidCrust\tBBQMeatlovers\t28.67\n237\tEagleBoys\tDeepPan\tBBQMeatlovers\t30.02\n238\tEagleBoys\tMidCrust\tSuperSupremo\t28.76\n239\tEagleBoys\tThinCrust\tBBQMeatlovers\t29.86\n240\tEagleBoys\tThinCrust\tHawaiian\t28.73\n241\tDominos\tThinNCrispy\tSupreme\t28.97\n242\tDominos\tClassicCrust\tBBQMeatlovers\t26.81\n243\tDominos\tDeepPan\tBBQMeatlovers\t27.1\n244\tEagleBoys\tDeepPan\tSuperSupremo\t29.36\n245\tEagleBoys\tThinCrust\tSuperSupremo\t29.34\n246\tEagleBoys\tMidCrust\tHawaiian\t28.9\n247\tDominos\tClassicCrust\tHawaiian\t25.78\n248\tDominos\tThinNCrispy\tSupreme\t28.84\n249\tDominos\tDeepPan\tBBQMeatlovers\t26.36\n250\tDominos\tDeepPan\tHawaiian\t26.11\n251\tDominos\tThinNCrispy\tBBQMeatlovers\t29.14\n252\tDominos\tClassicCrust\tSupreme\t26.71\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d2"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695043491_1284501661",
+      "id": "paragraph_1628695043491_1284501661",
+      "dateCreated": "2021-08-11 15:17:23.491",
+      "dateStarted": "2021-08-11 18:25:43.098",
+      "dateFinished": "2021-08-11 18:25:43.456",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## Create a schema\nNeed to figure out a schema for the data lake file.  This can be done in several ways:\n* apply a schema to the csv file when opening\n* infering it from the csv file\n* apply in code after reading in the csv file.\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:25:46.727",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eCreate a schema\u003c/h2\u003e\n\u003cp\u003eNeed to figure out a schema for the data lake file.  This can be done in several ways:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eapply a schema to the csv file when opening\u003c/li\u003e\n\u003cli\u003einfering it from the csv file\u003c/li\u003e\n\u003cli\u003eapply in code after reading in the csv file.\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695188638_1841244640",
+      "id": "paragraph_1628695188638_1841244640",
+      "dateCreated": "2021-08-11 15:19:48.638",
+      "dateStarted": "2021-08-11 18:25:46.727",
+      "dateFinished": "2021-08-11 18:25:46.750",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nspark.read.option(\"header\",true).option(\"inferSchema\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\").printSchema()\nval dfToOutput \u003d spark.read.option(\"header\",true).option(\"inferSchema\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:25:49.538",
+      "progress": 100,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- ID: integer (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: double (nullable \u003d true)\n\n\u001b[1m\u001b[34mdfToOutput\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: int, Store: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d3"
+            },
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d4"
+            },
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d5"
+            },
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d6"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695289340_1317370907",
+      "id": "paragraph_1628695289340_1317370907",
+      "dateCreated": "2021-08-11 15:21:29.340",
+      "dateStarted": "2021-08-11 18:25:49.551",
+      "dateFinished": "2021-08-11 18:25:50.236",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md \n## File output\n\nNow that we imported the file and have applied a schema it and be outputted as a parquet file and the schema will persist.\n\n## Write out a parquet file\n\nUnlike csv files parquet files have schema embedded in them which is important for our use cases.\n\nIt also\n\nReduces IO operations.\nFetches specific columns that you need to access.\nIt consumes less space.\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:25:53.366",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eFile output\u003c/h2\u003e\n\u003cp\u003eNow that we imported the file and have applied a schema it and be outputted as a parquet file and the schema will persist.\u003c/p\u003e\n\u003ch2\u003eWrite out a parquet file\u003c/h2\u003e\n\u003cp\u003eUnlike csv files parquet files have schema embedded in them which is important for our use cases.\u003c/p\u003e\n\u003cp\u003eIt also\u003c/p\u003e\n\u003cp\u003eReduces IO operations.\u003cbr /\u003e\nFetches specific columns that you need to access.\u003cbr /\u003e\nIt consumes less space.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695352134_1058106247",
+      "id": "paragraph_1628695352134_1058106247",
+      "dateCreated": "2021-08-11 15:22:32.134",
+      "dateStarted": "2021-08-11 18:25:53.365",
+      "dateFinished": "2021-08-11 18:25:53.376",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\n dfToOutput.write.mode(\"overwrite\").parquet(\"/opt/zeppelin/notebook/pizzasizes\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:26:05.625",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d7"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695615065_655387518",
+      "id": "paragraph_1628695615065_655387518",
+      "dateCreated": "2021-08-11 15:26:55.065",
+      "dateStarted": "2021-08-11 18:26:05.637",
+      "dateFinished": "2021-08-11 18:26:06.943",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md \n## Datalake created\n\nFrom this point on we will only use this file for further work.   The data is unchanged from the raw file but is in a better format to use it for future analysis.  Let\u0027d do that now and import our file.\n\nYou will notice that the schema persisted.  How cool is that!\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:26:46.368",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eDatalake created\u003c/h2\u003e\n\u003cp\u003eFrom this point on we will only use this file for further work.   The data is unchanged from the raw file but is in a better format to use it for future analysis.  Let\u0026rsquo;d do that now and import our file.\u003c/p\u003e\n\u003cp\u003eYou will notice that the schema persisted.  How cool is that!\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695765404_1588263026",
+      "id": "paragraph_1628695765404_1588263026",
+      "dateCreated": "2021-08-11 15:29:25.404",
+      "dateStarted": "2021-08-11 18:26:46.368",
+      "dateFinished": "2021-08-11 18:26:46.381",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark\nspark.read.parquet(\"/opt/zeppelin/notebook/pizzasizes\").printSchema()\nval df \u003d spark.read.parquet(\"/opt/zeppelin/notebook/pizzasizes\")\nval dfView \u003d df.select(\"*\")\ndfView.createOrReplaceTempView(\"df\")\nprintln(\"Created View for df\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:26:11.088",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- ID: integer (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: double (nullable \u003d true)\n\nCreated View for df\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: int, Store: string ... 3 more fields]\n\u001b[1m\u001b[34mdfView\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: int, Store: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d8"
+            },
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d9"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695906478_1203559310",
+      "id": "paragraph_1628695906478_1203559310",
+      "dateCreated": "2021-08-11 15:31:46.478",
+      "dateStarted": "2021-08-11 18:26:11.100",
+      "dateFinished": "2021-08-11 18:26:11.541",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\norder by Diameter\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:33:32.415",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "Store0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0.0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CrustDescription1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "Diameter2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 250.0
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Store": "string",
+                      "CrustDescription": "string",
+                      "Diameter": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Store",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "CrustDescription",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Store\tCrustDescription\tDiameter\nDominos\tClassicCrust\t25.51\nDominos\tThinNCrispy\t25.58\nDominos\tClassicCrust\t25.78\nDominos\tDeepPan\t25.98\nDominos\tDeepPan\t26.09\nDominos\tDeepPan\t26.11\nDominos\tClassicCrust\t26.15\nDominos\tDeepPan\t26.16\nDominos\tDeepPan\t26.26\nDominos\tDeepPan\t26.27\nDominos\tClassicCrust\t26.28\nDominos\tClassicCrust\t26.28\nDominos\tClassicCrust\t26.3\nDominos\tDeepPan\t26.34\nDominos\tDeepPan\t26.36\nDominos\tDeepPan\t26.37\nDominos\tThinNCrispy\t26.38\nDominos\tClassicCrust\t26.41\nDominos\tDeepPan\t26.42\nDominos\tDeepPan\t26.45\nDominos\tClassicCrust\t26.47\nDominos\tDeepPan\t26.48\nDominos\tDeepPan\t26.5\nDominos\tClassicCrust\t26.53\nDominos\tClassicCrust\t26.54\nDominos\tDeepPan\t26.55\nDominos\tClassicCrust\t26.55\nDominos\tClassicCrust\t26.56\nDominos\tDeepPan\t26.58\nEagleBoys\tMidCrust\t26.58\nDominos\tClassicCrust\t26.58\nDominos\tDeepPan\t26.59\nDominos\tClassicCrust\t26.59\nDominos\tDeepPan\t26.6\nDominos\tDeepPan\t26.6\nDominos\tDeepPan\t26.6\nDominos\tClassicCrust\t26.6\nDominos\tDeepPan\t26.61\nDominos\tClassicCrust\t26.61\nDominos\tClassicCrust\t26.64\nDominos\tDeepPan\t26.64\nDominos\tClassicCrust\t26.65\nDominos\tClassicCrust\t26.65\nDominos\tClassicCrust\t26.65\nDominos\tDeepPan\t26.67\nDominos\tDeepPan\t26.7\nDominos\tDeepPan\t26.7\nDominos\tDeepPan\t26.7\nDominos\tClassicCrust\t26.7\nDominos\tClassicCrust\t26.71\nDominos\tClassicCrust\t26.71\nDominos\tDeepPan\t26.73\nDominos\tDeepPan\t26.74\nDominos\tDeepPan\t26.76\nDominos\tDeepPan\t26.77\nDominos\tDeepPan\t26.77\nDominos\tClassicCrust\t26.77\nDominos\tClassicCrust\t26.78\nDominos\tClassicCrust\t26.78\nDominos\tClassicCrust\t26.79\nDominos\tClassicCrust\t26.81\nDominos\tClassicCrust\t26.83\nDominos\tDeepPan\t26.87\nDominos\tClassicCrust\t26.93\nDominos\tClassicCrust\t26.97\nDominos\tClassicCrust\t26.97\nDominos\tDeepPan\t27.0\nDominos\tClassicCrust\t27.04\nDominos\tThinNCrispy\t27.04\nDominos\tClassicCrust\t27.04\nDominos\tDeepPan\t27.04\nDominos\tClassicCrust\t27.05\nDominos\tDeepPan\t27.06\nDominos\tDeepPan\t27.1\nDominos\tClassicCrust\t27.12\nDominos\tDeepPan\t27.12\nDominos\tDeepPan\t27.14\nDominos\tClassicCrust\t27.15\nDominos\tDeepPan\t27.16\nDominos\tClassicCrust\t27.2\nDominos\tDeepPan\t27.22\nDominos\tClassicCrust\t27.27\nDominos\tClassicCrust\t27.27\nDominos\tThinNCrispy\t27.45\nDominos\tClassicCrust\t27.52\nEagleBoys\tMidCrust\t28.15\nEagleBoys\tDeepPan\t28.19\nEagleBoys\tMidCrust\t28.2\nEagleBoys\tDeepPan\t28.29\nEagleBoys\tMidCrust\t28.29\nDominos\tThinNCrispy\t28.32\nEagleBoys\tMidCrust\t28.34\nEagleBoys\tMidCrust\t28.36\nEagleBoys\tMidCrust\t28.42\nDominos\tThinNCrispy\t28.44\nEagleBoys\tMidCrust\t28.47\nEagleBoys\tDeepPan\t28.48\nEagleBoys\tDeepPan\t28.48\nDominos\tThinNCrispy\t28.52\nEagleBoys\tDeepPan\t28.54\nEagleBoys\tMidCrust\t28.54\nEagleBoys\tThinCrust\t28.54\nEagleBoys\tDeepPan\t28.6\nEagleBoys\tMidCrust\t28.6\nEagleBoys\tDeepPan\t28.61\nEagleBoys\tDeepPan\t28.63\nEagleBoys\tMidCrust\t28.63\nDominos\tThinNCrispy\t28.64\nEagleBoys\tMidCrust\t28.65\nEagleBoys\tMidCrust\t28.66\nEagleBoys\tMidCrust\t28.67\nDominos\tThinNCrispy\t28.67\nEagleBoys\tDeepPan\t28.68\nEagleBoys\tDeepPan\t28.68\nEagleBoys\tThinCrust\t28.71\nDominos\tThinNCrispy\t28.71\nEagleBoys\tMidCrust\t28.72\nEagleBoys\tMidCrust\t28.73\nEagleBoys\tThinCrust\t28.73\nEagleBoys\tDeepPan\t28.73\nDominos\tThinNCrispy\t28.75\nEagleBoys\tThinCrust\t28.75\nEagleBoys\tMidCrust\t28.76\nEagleBoys\tMidCrust\t28.76\nEagleBoys\tDeepPan\t28.76\nEagleBoys\tDeepPan\t28.77\nDominos\tThinNCrispy\t28.78\nEagleBoys\tDeepPan\t28.78\nEagleBoys\tMidCrust\t28.79\nEagleBoys\tMidCrust\t28.79\nDominos\tDeepPan\t28.79\nEagleBoys\tMidCrust\t28.79\nEagleBoys\tMidCrust\t28.8\nEagleBoys\tMidCrust\t28.8\nDominos\tThinNCrispy\t28.82\nDominos\tThinNCrispy\t28.84\nEagleBoys\tMidCrust\t28.85\nEagleBoys\tMidCrust\t28.86\nEagleBoys\tDeepPan\t28.86\nDominos\tThinNCrispy\t28.86\nDominos\tThinNCrispy\t28.86\nEagleBoys\tMidCrust\t28.9\nDominos\tClassicCrust\t28.9\nDominos\tThinNCrispy\t28.92\nEagleBoys\tMidCrust\t28.93\nEagleBoys\tMidCrust\t28.93\nDominos\tThinNCrispy\t28.94\nEagleBoys\tDeepPan\t28.94\nEagleBoys\tDeepPan\t28.95\nDominos\tThinNCrispy\t28.95\nEagleBoys\tMidCrust\t28.96\nEagleBoys\tMidCrust\t28.97\nEagleBoys\tDeepPan\t28.97\nDominos\tThinNCrispy\t28.97\nEagleBoys\tDeepPan\t28.98\nEagleBoys\tDeepPan\t28.98\nEagleBoys\tMidCrust\t28.98\nEagleBoys\tMidCrust\t28.99\nEagleBoys\tDeepPan\t29.0\nDominos\tThinNCrispy\t29.0\nEagleBoys\tDeepPan\t29.01\nDominos\tThinNCrispy\t29.01\nEagleBoys\tMidCrust\t29.01\nEagleBoys\tMidCrust\t29.03\nEagleBoys\tDeepPan\t29.04\nDominos\tThinNCrispy\t29.04\nDominos\tThinNCrispy\t29.04\nEagleBoys\tDeepPan\t29.04\nEagleBoys\tMidCrust\t29.08\nEagleBoys\tMidCrust\t29.08\nDominos\tThinNCrispy\t29.09\nEagleBoys\tDeepPan\t29.09\nDominos\tThinNCrispy\t29.11\nDominos\tThinNCrispy\t29.14\nDominos\tThinNCrispy\t29.14\nEagleBoys\tThinCrust\t29.14\nDominos\tThinNCrispy\t29.14\nEagleBoys\tMidCrust\t29.15\nEagleBoys\tDeepPan\t29.16\nDominos\tThinNCrispy\t29.17\nDominos\tThinNCrispy\t29.19\nEagleBoys\tDeepPan\t29.19\nEagleBoys\tMidCrust\t29.19\nDominos\tThinNCrispy\t29.19\nEagleBoys\tDeepPan\t29.21\nDominos\tThinNCrispy\t29.21\nDominos\tThinNCrispy\t29.23\nEagleBoys\tMidCrust\t29.24\nEagleBoys\tThinCrust\t29.27\nEagleBoys\tDeepPan\t29.3\nEagleBoys\tMidCrust\t29.32\nDominos\tThinNCrispy\t29.32\nDominos\tThinNCrispy\t29.33\nDominos\tThinNCrispy\t29.33\nEagleBoys\tThinCrust\t29.34\nEagleBoys\tThinCrust\t29.34\nEagleBoys\tDeepPan\t29.34\nEagleBoys\tDeepPan\t29.35\nEagleBoys\tDeepPan\t29.36\nDominos\tThinNCrispy\t29.37\nEagleBoys\tDeepPan\t29.38\nEagleBoys\tDeepPan\t29.38\nEagleBoys\tMidCrust\t29.38\nEagleBoys\tDeepPan\t29.38\nEagleBoys\tThinCrust\t29.4\nEagleBoys\tThinCrust\t29.4\nEagleBoys\tThinCrust\t29.4\nDominos\tThinNCrispy\t29.4\nDominos\tThinNCrispy\t29.41\nEagleBoys\tThinCrust\t29.42\nDominos\tThinNCrispy\t29.43\nEagleBoys\tThinCrust\t29.43\nEagleBoys\tThinCrust\t29.45\nEagleBoys\tMidCrust\t29.47\nEagleBoys\tThinCrust\t29.47\nEagleBoys\tThinCrust\t29.48\nEagleBoys\tThinCrust\t29.51\nEagleBoys\tThinCrust\t29.51\nEagleBoys\tDeepPan\t29.53\nEagleBoys\tThinCrust\t29.57\nEagleBoys\tDeepPan\t29.59\nDominos\tThinNCrispy\t29.63\nDominos\tThinNCrispy\t29.66\nEagleBoys\tDeepPan\t29.68\nEagleBoys\tThinCrust\t29.68\nEagleBoys\tThinCrust\t29.71\nEagleBoys\tThinCrust\t29.75\nEagleBoys\tDeepPan\t29.78\nEagleBoys\tMidCrust\t29.81\nEagleBoys\tDeepPan\t29.82\nEagleBoys\tThinCrust\t29.86\nEagleBoys\tThinCrust\t29.86\nEagleBoys\tThinCrust\t29.9\nEagleBoys\tThinCrust\t29.91\nEagleBoys\tDeepPan\t29.92\nEagleBoys\tThinCrust\t29.98\nEagleBoys\tThinCrust\t30.0\nEagleBoys\tThinCrust\t30.01\nEagleBoys\tDeepPan\t30.02\nEagleBoys\tThinCrust\t30.05\nEagleBoys\tThinCrust\t30.08\nEagleBoys\tThinCrust\t30.16\nEagleBoys\tThinCrust\t30.17\nEagleBoys\tThinCrust\t30.31\nEagleBoys\tThinCrust\t30.35\nEagleBoys\tDeepPan\t30.37\nEagleBoys\tThinCrust\t30.44\nEagleBoys\tThinCrust\t30.51\nEagleBoys\tThinCrust\t30.67\nEagleBoys\tThinCrust\t31.06\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d12"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628695996455_1929422375",
+      "id": "paragraph_1628695996455_1929422375",
+      "dateCreated": "2021-08-11 15:33:16.456",
+      "dateStarted": "2021-08-11 18:28:59.131",
+      "dateFinished": "2021-08-11 18:28:59.300",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\nwhere CrustDescription\u003d\"DeepPan\"\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 18:55:58.210",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "Store0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0.0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CrustDescription1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "Diameter2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 250.0
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Store": "string",
+                      "CrustDescription": "string",
+                      "Diameter": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Store",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "Diameter",
+                  "index": 2.0,
+                  "aggr": "avg"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Store\tCrustDescription\tDiameter\nDominos\tDeepPan\t27.06\nDominos\tDeepPan\t27.16\nEagleBoys\tDeepPan\t28.78\nEagleBoys\tDeepPan\t29.38\nDominos\tDeepPan\t26.6\nDominos\tDeepPan\t26.5\nDominos\tDeepPan\t26.64\nDominos\tDeepPan\t26.87\nDominos\tDeepPan\t26.61\nDominos\tDeepPan\t26.34\nEagleBoys\tDeepPan\t28.73\nEagleBoys\tDeepPan\t28.48\nEagleBoys\tDeepPan\t29.01\nEagleBoys\tDeepPan\t29.59\nEagleBoys\tDeepPan\t29.04\nEagleBoys\tDeepPan\t28.95\nEagleBoys\tDeepPan\t29.38\nEagleBoys\tDeepPan\t28.6\nDominos\tDeepPan\t25.98\nDominos\tDeepPan\t26.67\nDominos\tDeepPan\t26.09\nDominos\tDeepPan\t27.12\nDominos\tDeepPan\t26.37\nEagleBoys\tDeepPan\t28.29\nEagleBoys\tDeepPan\t28.97\nDominos\tDeepPan\t26.74\nEagleBoys\tDeepPan\t29.82\nDominos\tDeepPan\t26.45\nEagleBoys\tDeepPan\t28.68\nDominos\tDeepPan\t26.58\nDominos\tDeepPan\t27.14\nEagleBoys\tDeepPan\t28.98\nEagleBoys\tDeepPan\t29.68\nEagleBoys\tDeepPan\t28.63\nEagleBoys\tDeepPan\t28.76\nDominos\tDeepPan\t27.0\nDominos\tDeepPan\t26.59\nEagleBoys\tDeepPan\t28.98\nEagleBoys\tDeepPan\t28.94\nEagleBoys\tDeepPan\t29.38\nEagleBoys\tDeepPan\t28.86\nEagleBoys\tDeepPan\t29.35\nEagleBoys\tDeepPan\t28.54\nEagleBoys\tDeepPan\t29.92\nEagleBoys\tDeepPan\t29.21\nDominos\tDeepPan\t26.26\nDominos\tDeepPan\t26.16\nDominos\tDeepPan\t26.7\nDominos\tDeepPan\t26.73\nDominos\tDeepPan\t26.42\nEagleBoys\tDeepPan\t28.68\nEagleBoys\tDeepPan\t29.16\nEagleBoys\tDeepPan\t29.53\nEagleBoys\tDeepPan\t28.19\nEagleBoys\tDeepPan\t28.48\nEagleBoys\tDeepPan\t29.04\nEagleBoys\tDeepPan\t29.19\nEagleBoys\tDeepPan\t28.61\nDominos\tDeepPan\t26.48\nDominos\tDeepPan\t26.27\nDominos\tDeepPan\t27.04\nDominos\tDeepPan\t27.22\nDominos\tDeepPan\t26.77\nEagleBoys\tDeepPan\t29.0\nEagleBoys\tDeepPan\t29.78\nDominos\tDeepPan\t26.55\nDominos\tDeepPan\t26.77\nDominos\tDeepPan\t26.7\nDominos\tDeepPan\t26.6\nEagleBoys\tDeepPan\t29.3\nEagleBoys\tDeepPan\t28.77\nDominos\tDeepPan\t26.76\nEagleBoys\tDeepPan\t29.34\nDominos\tDeepPan\t26.6\nDominos\tDeepPan\t26.7\nDominos\tDeepPan\t28.79\nEagleBoys\tDeepPan\t30.37\nEagleBoys\tDeepPan\t29.09\nEagleBoys\tDeepPan\t30.02\nDominos\tDeepPan\t27.1\nEagleBoys\tDeepPan\t29.36\nDominos\tDeepPan\t26.36\nDominos\tDeepPan\t26.11\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d19"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628707701036_332691212",
+      "id": "paragraph_1628707701036_332691212",
+      "dateCreated": "2021-08-11 18:48:21.036",
+      "dateStarted": "2021-08-11 18:55:58.224",
+      "dateFinished": "2021-08-11 18:55:58.305",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\nwhere CrustDescription\u003d\"ThinNCrispy\" or CrustDescription\u003d\"ThinCrust\" \n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 19:01:03.457",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "Store0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0.0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CrustDescription1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "Diameter2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 250.0
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Store": "string",
+                      "CrustDescription": "string",
+                      "Diameter": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Store",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "Diameter",
+                  "index": 2.0,
+                  "aggr": "avg"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Store\tCrustDescription\tDiameter\nDominos\tThinNCrispy\t29.4\nDominos\tThinNCrispy\t29.63\nDominos\tThinNCrispy\t27.45\nEagleBoys\tThinCrust\t30.05\nEagleBoys\tThinCrust\t29.14\nEagleBoys\tThinCrust\t29.98\nEagleBoys\tThinCrust\t29.47\nEagleBoys\tThinCrust\t30.0\nEagleBoys\tThinCrust\t30.01\nEagleBoys\tThinCrust\t30.44\nDominos\tThinNCrispy\t26.38\nDominos\tThinNCrispy\t28.86\nDominos\tThinNCrispy\t28.92\nDominos\tThinNCrispy\t28.75\nDominos\tThinNCrispy\t29.33\nDominos\tThinNCrispy\t29.0\nEagleBoys\tThinCrust\t29.75\nEagleBoys\tThinCrust\t29.9\nEagleBoys\tThinCrust\t29.4\nDominos\tThinNCrispy\t29.04\nDominos\tThinNCrispy\t29.01\nDominos\tThinNCrispy\t29.37\nDominos\tThinNCrispy\t29.32\nEagleBoys\tThinCrust\t30.35\nDominos\tThinNCrispy\t28.67\nDominos\tThinNCrispy\t29.11\nDominos\tThinNCrispy\t29.19\nEagleBoys\tThinCrust\t29.42\nEagleBoys\tThinCrust\t30.51\nDominos\tThinNCrispy\t29.66\nDominos\tThinNCrispy\t29.17\nEagleBoys\tThinCrust\t29.43\nEagleBoys\tThinCrust\t28.54\nEagleBoys\tThinCrust\t30.08\nEagleBoys\tThinCrust\t29.4\nEagleBoys\tThinCrust\t30.31\nDominos\tThinNCrispy\t28.71\nDominos\tThinNCrispy\t29.19\nEagleBoys\tThinCrust\t29.48\nEagleBoys\tThinCrust\t29.91\nEagleBoys\tThinCrust\t29.4\nEagleBoys\tThinCrust\t30.17\nDominos\tThinNCrispy\t28.95\nDominos\tThinNCrispy\t29.09\nEagleBoys\tThinCrust\t30.67\nDominos\tThinNCrispy\t29.43\nDominos\tThinNCrispy\t29.21\nDominos\tThinNCrispy\t29.14\nDominos\tThinNCrispy\t28.78\nEagleBoys\tThinCrust\t31.06\nEagleBoys\tThinCrust\t29.34\nEagleBoys\tThinCrust\t29.51\nEagleBoys\tThinCrust\t28.75\nEagleBoys\tThinCrust\t29.57\nEagleBoys\tThinCrust\t29.27\nEagleBoys\tThinCrust\t29.68\nEagleBoys\tThinCrust\t29.51\nDominos\tThinNCrispy\t29.33\nDominos\tThinNCrispy\t29.14\nDominos\tThinNCrispy\t29.23\nDominos\tThinNCrispy\t28.82\nDominos\tThinNCrispy\t28.32\nEagleBoys\tThinCrust\t29.86\nDominos\tThinNCrispy\t28.64\nDominos\tThinNCrispy\t28.52\nDominos\tThinNCrispy\t28.44\nDominos\tThinNCrispy\t29.41\nDominos\tThinNCrispy\t27.04\nEagleBoys\tThinCrust\t30.16\nEagleBoys\tThinCrust\t29.45\nDominos\tThinNCrispy\t29.04\nEagleBoys\tThinCrust\t29.71\nDominos\tThinNCrispy\t28.94\nDominos\tThinNCrispy\t28.86\nDominos\tThinNCrispy\t25.58\nEagleBoys\tThinCrust\t28.71\nEagleBoys\tThinCrust\t29.86\nEagleBoys\tThinCrust\t28.73\nDominos\tThinNCrispy\t28.97\nEagleBoys\tThinCrust\t29.34\nDominos\tThinNCrispy\t28.84\nDominos\tThinNCrispy\t29.14\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d20"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628708410779_2079219309",
+      "id": "paragraph_1628708410779_2079219309",
+      "dateCreated": "2021-08-11 19:00:10.779",
+      "dateStarted": "2021-08-11 19:01:03.475",
+      "dateFinished": "2021-08-11 19:01:03.615",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\nwhere CrustDescription\u003d\"ClassicCrust\" or CrustDescription\u003d\"MidCrust\" \n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 19:02:51.220",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "Store0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0.0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CrustDescription1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "Diameter2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 250.0
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Store": "string",
+                      "CrustDescription": "string",
+                      "Diameter": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Store",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "Diameter",
+                  "index": 2.0,
+                  "aggr": "avg"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Store\tCrustDescription\tDiameter\nDominos\tClassicCrust\t26.59\nEagleBoys\tMidCrust\t29.15\nEagleBoys\tMidCrust\t29.24\nEagleBoys\tMidCrust\t28.97\nEagleBoys\tMidCrust\t28.93\nEagleBoys\tMidCrust\t28.66\nDominos\tClassicCrust\t26.65\nDominos\tClassicCrust\t26.55\nDominos\tClassicCrust\t26.15\nDominos\tClassicCrust\t26.56\nDominos\tClassicCrust\t26.65\nDominos\tClassicCrust\t27.2\nDominos\tClassicCrust\t26.61\nEagleBoys\tMidCrust\t28.73\nEagleBoys\tMidCrust\t28.6\nEagleBoys\tMidCrust\t29.03\nEagleBoys\tMidCrust\t28.72\nEagleBoys\tMidCrust\t28.99\nDominos\tClassicCrust\t26.97\nEagleBoys\tMidCrust\t29.08\nDominos\tClassicCrust\t26.83\nDominos\tClassicCrust\t27.04\nDominos\tClassicCrust\t26.93\nDominos\tClassicCrust\t26.41\nEagleBoys\tMidCrust\t28.65\nEagleBoys\tMidCrust\t29.32\nDominos\tClassicCrust\t26.78\nDominos\tClassicCrust\t27.27\nEagleBoys\tMidCrust\t28.54\nEagleBoys\tMidCrust\t28.8\nEagleBoys\tMidCrust\t29.47\nEagleBoys\tMidCrust\t29.38\nEagleBoys\tMidCrust\t29.19\nEagleBoys\tMidCrust\t28.79\nEagleBoys\tMidCrust\t28.76\nEagleBoys\tMidCrust\t28.86\nDominos\tClassicCrust\t27.04\nDominos\tClassicCrust\t26.77\nEagleBoys\tMidCrust\t28.15\nEagleBoys\tMidCrust\t28.47\nEagleBoys\tMidCrust\t28.85\nEagleBoys\tMidCrust\t26.58\nDominos\tClassicCrust\t26.7\nDominos\tClassicCrust\t25.51\nEagleBoys\tMidCrust\t28.34\nEagleBoys\tMidCrust\t29.08\nDominos\tClassicCrust\t26.78\nDominos\tClassicCrust\t26.28\nDominos\tClassicCrust\t26.47\nDominos\tClassicCrust\t26.71\nDominos\tClassicCrust\t26.28\nEagleBoys\tMidCrust\t28.42\nEagleBoys\tMidCrust\t29.01\nEagleBoys\tMidCrust\t28.98\nEagleBoys\tMidCrust\t28.8\nEagleBoys\tMidCrust\t28.2\nEagleBoys\tMidCrust\t28.79\nEagleBoys\tMidCrust\t28.93\nEagleBoys\tMidCrust\t28.29\nDominos\tClassicCrust\t26.58\nDominos\tClassicCrust\t26.65\nDominos\tClassicCrust\t27.27\nDominos\tClassicCrust\t28.9\nDominos\tClassicCrust\t27.15\nDominos\tClassicCrust\t26.64\nEagleBoys\tMidCrust\t29.81\nDominos\tClassicCrust\t27.12\nDominos\tClassicCrust\t26.53\nDominos\tClassicCrust\t27.05\nDominos\tClassicCrust\t26.97\nDominos\tClassicCrust\t27.52\nEagleBoys\tMidCrust\t28.79\nEagleBoys\tMidCrust\t28.36\nDominos\tClassicCrust\t26.79\nEagleBoys\tMidCrust\t28.96\nDominos\tClassicCrust\t26.3\nDominos\tClassicCrust\t26.54\nDominos\tClassicCrust\t26.6\nEagleBoys\tMidCrust\t28.63\nEagleBoys\tMidCrust\t28.67\nEagleBoys\tMidCrust\t28.76\nDominos\tClassicCrust\t26.81\nEagleBoys\tMidCrust\t28.9\nDominos\tClassicCrust\t25.78\nDominos\tClassicCrust\t26.71\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d21"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628708483011_634655722",
+      "id": "paragraph_1628708483011_634655722",
+      "dateCreated": "2021-08-11 19:01:23.011",
+      "dateStarted": "2021-08-11 19:02:32.732",
+      "dateFinished": "2021-08-11 19:02:32.812",
+      "status": "FINISHED"
+    },
+    {
+      "text": "ThinCrust\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-11 19:01:32.707",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628706453320_308726334",
+      "id": "paragraph_1628706453320_308726334",
+      "dateCreated": "2021-08-11 18:27:33.320",
+      "status": "READY"
+    }
+  ],
+  "name": "Parquet example",
+  "id": "2GCKMKRCW",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
