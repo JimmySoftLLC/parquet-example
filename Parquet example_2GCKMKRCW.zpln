@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n## Parquet\nA file type that is a hybrid of columns and row.",
+      "text": "%md\n## Parquet\nApache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. It is similar to the other columnar-storage file formats available in Hadoop namely RCFile and ORC. It is compatible with most of the data processing frameworks in the Hadoop environment.",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:25:18.736",
+      "dateUpdated": "2021-08-12 13:06:10.904",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -29,7 +29,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eParquet\u003c/h2\u003e\n\u003cp\u003eA file type that is a hybrid of columns and row.\u003c/p\u003e\n\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eParquet\u003c/h2\u003e\n\u003cp\u003eApache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. It is similar to the other columnar-storage file formats available in Hadoop namely RCFile and ORC. It is compatible with most of the data processing frameworks in the Hadoop environment.\u003c/p\u003e\n\n\u003c/div\u003e"
           }
         ]
       },
@@ -39,15 +39,15 @@
       "jobName": "paragraph_1628694861764_301386144",
       "id": "paragraph_1628694861764_301386144",
       "dateCreated": "2021-08-11 15:14:21.764",
-      "dateStarted": "2021-08-11 18:25:18.739",
-      "dateFinished": "2021-08-11 18:25:21.192",
+      "dateStarted": "2021-08-12 13:06:10.938",
+      "dateFinished": "2021-08-12 13:06:12.846",
       "status": "FINISHED"
     },
     {
       "text": "%spark\nspark.read.option(\"header\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\").printSchema()\nval df \u003d spark.read.option(\"header\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\")\nval dfView \u003d df.select(\"*\")\ndfView.createOrReplaceTempView(\"df\")\nprintln(\"Created View for df\")\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:25:24.114",
-      "progress": 100,
+      "dateUpdated": "2021-08-12 13:06:12.946",
+      "progress": 0,
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -85,10 +85,10 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d0"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d0"
             },
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d1"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d1"
             }
           ],
           "interpreterSettingId": "spark"
@@ -98,14 +98,14 @@
       "jobName": "paragraph_1628694973539_180340326",
       "id": "paragraph_1628694973539_180340326",
       "dateCreated": "2021-08-11 15:16:13.539",
-      "dateStarted": "2021-08-11 18:25:24.133",
-      "dateFinished": "2021-08-11 18:25:39.665",
+      "dateStarted": "2021-08-12 13:06:12.959",
+      "dateFinished": "2021-08-12 13:06:25.273",
       "status": "FINISHED"
     },
     {
       "text": "%spark.sql\nselect *\nfrom df",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:25:43.081",
+      "dateUpdated": "2021-08-12 13:06:25.371",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -174,7 +174,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d2"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d2"
             }
           ],
           "interpreterSettingId": "spark"
@@ -184,14 +184,14 @@
       "jobName": "paragraph_1628695043491_1284501661",
       "id": "paragraph_1628695043491_1284501661",
       "dateCreated": "2021-08-11 15:17:23.491",
-      "dateStarted": "2021-08-11 18:25:43.098",
-      "dateFinished": "2021-08-11 18:25:43.456",
+      "dateStarted": "2021-08-12 13:06:25.390",
+      "dateFinished": "2021-08-12 13:06:25.735",
       "status": "FINISHED"
     },
     {
-      "text": "%md\n## Create a schema\nNeed to figure out a schema for the data lake file.  This can be done in several ways:\n* apply a schema to the csv file when opening\n* infering it from the csv file\n* apply in code after reading in the csv file.\n",
+      "text": "%md\n## Create a schema\nNeed to figure out a schema for our data lake file.  This can be done in several ways:\n* apply a schema to the csv file when opening\n* infering it from the csv file\n* apply in code after reading in the csv file.\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:25:46.727",
+      "dateUpdated": "2021-08-12 13:06:25.791",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -217,7 +217,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eCreate a schema\u003c/h2\u003e\n\u003cp\u003eNeed to figure out a schema for the data lake file.  This can be done in several ways:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eapply a schema to the csv file when opening\u003c/li\u003e\n\u003cli\u003einfering it from the csv file\u003c/li\u003e\n\u003cli\u003eapply in code after reading in the csv file.\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eCreate a schema\u003c/h2\u003e\n\u003cp\u003eNeed to figure out a schema for our data lake file.  This can be done in several ways:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eapply a schema to the csv file when opening\u003c/li\u003e\n\u003cli\u003einfering it from the csv file\u003c/li\u003e\n\u003cli\u003eapply in code after reading in the csv file.\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003c/div\u003e"
           }
         ]
       },
@@ -227,15 +227,15 @@
       "jobName": "paragraph_1628695188638_1841244640",
       "id": "paragraph_1628695188638_1841244640",
       "dateCreated": "2021-08-11 15:19:48.638",
-      "dateStarted": "2021-08-11 18:25:46.727",
-      "dateFinished": "2021-08-11 18:25:46.750",
+      "dateStarted": "2021-08-12 13:06:25.813",
+      "dateFinished": "2021-08-12 13:06:25.834",
       "status": "FINISHED"
     },
     {
       "text": "%spark\nspark.read.option(\"header\",true).option(\"inferSchema\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\").printSchema()\nval dfToOutput \u003d spark.read.option(\"header\",true).option(\"inferSchema\",true).csv(\"/opt/zeppelin/notebook/pizzasize.csv\")\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:25:49.538",
-      "progress": 100,
+      "dateUpdated": "2021-08-12 13:14:40.865",
+      "progress": 0,
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -260,7 +260,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "root\n |-- ID: integer (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: double (nullable \u003d true)\n\n\u001b[1m\u001b[34mdfToOutput\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: int, Store: string ... 3 more fields]\n"
+            "data": "root\n |-- ID: integer (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: double (nullable \u003d true)\n\nimport org.apache.spark.sql.types.{IntegerType, StringType, StructType, StructField}\n\u001b[1m\u001b[34mdfToOutput\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: int, Store: string ... 3 more fields]\n"
           }
         ]
       },
@@ -273,16 +273,16 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d3"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d14"
             },
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d4"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d15"
             },
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d5"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d16"
             },
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d6"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d17"
             }
           ],
           "interpreterSettingId": "spark"
@@ -292,14 +292,55 @@
       "jobName": "paragraph_1628695289340_1317370907",
       "id": "paragraph_1628695289340_1317370907",
       "dateCreated": "2021-08-11 15:21:29.340",
-      "dateStarted": "2021-08-11 18:25:49.551",
-      "dateFinished": "2021-08-11 18:25:50.236",
+      "dateStarted": "2021-08-12 13:14:15.741",
+      "dateFinished": "2021-08-12 13:14:16.161",
       "status": "FINISHED"
     },
     {
-      "text": "%md \n## File output\n\nNow that we imported the file and have applied a schema it and be outputted as a parquet file and the schema will persist.\n\n## Write out a parquet file\n\nUnlike csv files parquet files have schema embedded in them which is important for our use cases.\n\nIt also\n\nReduces IO operations.\nFetches specific columns that you need to access.\nIt consumes less space.\n",
+      "text": "%spark\nimport org.apache.spark.sql.types.{DoubleType,StringType,StructType,StructField}\nval schema \u003d StructType(Array(\n    StructField(\"ID\",StringType,true),\n    StructField(\"Store\",StringType,true),\n    StructField(\"CrustDescription\",StringType,true),\n    StructField(\"Topping\", StringType, true),\n    StructField(\"Diameter\", DoubleType, true)\n  ))\nspark.read.option(\"header\", \"true\").schema(schema).csv(\"/opt/zeppelin/notebook/pizzasize.csv\").printSchema()\nval dfToOutput \u003d spark.read.option(\"header\", \"true\").schema(schema).csv(\"/opt/zeppelin/notebook/pizzasize.csv\")",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:25:53.366",
+      "dateUpdated": "2021-08-12 13:20:32.192",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- ID: string (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: double (nullable \u003d true)\n\nimport org.apache.spark.sql.types.{DoubleType, StringType, StructType, StructField}\n\u001b[1m\u001b[34mschema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m \u003d StructType(StructField(ID,StringType,true), StructField(Store,StringType,true), StructField(CrustDescription,StringType,true), StructField(Topping,StringType,true), StructField(Diameter,DoubleType,true))\n\u001b[1m\u001b[34mdfToOutput\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: string, Store: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1628773613565_979770759",
+      "id": "paragraph_1628773613565_979770759",
+      "dateCreated": "2021-08-12 13:06:53.568",
+      "dateStarted": "2021-08-12 13:20:32.204",
+      "dateFinished": "2021-08-12 13:20:32.436",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md \n## Write out a parquet file\nNow that we imported the file and have applied a schema it and be outputted as a parquet file and the schema will persist.\n\nUnlike csv files parquet files have schema embedded in them which is important for our use case.\n\nIt also\n\n* Reduces IO operations.\n* Fetches specific columns that you need to access.\n* It consumes less space.\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-08-12 13:06:26.520",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -325,7 +366,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eFile output\u003c/h2\u003e\n\u003cp\u003eNow that we imported the file and have applied a schema it and be outputted as a parquet file and the schema will persist.\u003c/p\u003e\n\u003ch2\u003eWrite out a parquet file\u003c/h2\u003e\n\u003cp\u003eUnlike csv files parquet files have schema embedded in them which is important for our use cases.\u003c/p\u003e\n\u003cp\u003eIt also\u003c/p\u003e\n\u003cp\u003eReduces IO operations.\u003cbr /\u003e\nFetches specific columns that you need to access.\u003cbr /\u003e\nIt consumes less space.\u003c/p\u003e\n\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eWrite out a parquet file\u003c/h2\u003e\n\u003cp\u003eNow that we imported the file and have applied a schema it and be outputted as a parquet file and the schema will persist.\u003c/p\u003e\n\u003cp\u003eUnlike csv files parquet files have schema embedded in them which is important for our use case.\u003c/p\u003e\n\u003cp\u003eIt also\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eReduces IO operations.\u003c/li\u003e\n\u003cli\u003eFetches specific columns that you need to access.\u003c/li\u003e\n\u003cli\u003eIt consumes less space.\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003c/div\u003e"
           }
         ]
       },
@@ -335,14 +376,14 @@
       "jobName": "paragraph_1628695352134_1058106247",
       "id": "paragraph_1628695352134_1058106247",
       "dateCreated": "2021-08-11 15:22:32.134",
-      "dateStarted": "2021-08-11 18:25:53.365",
-      "dateFinished": "2021-08-11 18:25:53.376",
+      "dateStarted": "2021-08-12 13:06:26.532",
+      "dateFinished": "2021-08-12 13:06:26.543",
       "status": "FINISHED"
     },
     {
       "text": "%spark\n dfToOutput.write.mode(\"overwrite\").parquet(\"/opt/zeppelin/notebook/pizzasizes\")",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:26:05.625",
+      "dateUpdated": "2021-08-12 13:20:51.536",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -374,7 +415,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d7"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d18"
             }
           ],
           "interpreterSettingId": "spark"
@@ -384,14 +425,14 @@
       "jobName": "paragraph_1628695615065_655387518",
       "id": "paragraph_1628695615065_655387518",
       "dateCreated": "2021-08-11 15:26:55.065",
-      "dateStarted": "2021-08-11 18:26:05.637",
-      "dateFinished": "2021-08-11 18:26:06.943",
+      "dateStarted": "2021-08-12 13:20:51.557",
+      "dateFinished": "2021-08-12 13:20:51.956",
       "status": "FINISHED"
     },
     {
       "text": "%md \n## Datalake created\n\nFrom this point on we will only use this file for further work.   The data is unchanged from the raw file but is in a better format to use it for future analysis.  Let\u0027d do that now and import our file.\n\nYou will notice that the schema persisted.  How cool is that!\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:26:46.368",
+      "dateUpdated": "2021-08-12 13:06:27.952",
       "progress": 0,
       "config": {
         "tableHide": false,
@@ -427,14 +468,14 @@
       "jobName": "paragraph_1628695765404_1588263026",
       "id": "paragraph_1628695765404_1588263026",
       "dateCreated": "2021-08-11 15:29:25.404",
-      "dateStarted": "2021-08-11 18:26:46.368",
-      "dateFinished": "2021-08-11 18:26:46.381",
+      "dateStarted": "2021-08-12 13:06:27.968",
+      "dateFinished": "2021-08-12 13:06:27.977",
       "status": "FINISHED"
     },
     {
       "text": "%spark\nspark.read.parquet(\"/opt/zeppelin/notebook/pizzasizes\").printSchema()\nval df \u003d spark.read.parquet(\"/opt/zeppelin/notebook/pizzasizes\")\nval dfView \u003d df.select(\"*\")\ndfView.createOrReplaceTempView(\"df\")\nprintln(\"Created View for df\")\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:26:11.088",
+      "dateUpdated": "2021-08-12 13:20:56.490",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -458,7 +499,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "root\n |-- ID: integer (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: double (nullable \u003d true)\n\nCreated View for df\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: int, Store: string ... 3 more fields]\n\u001b[1m\u001b[34mdfView\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: int, Store: string ... 3 more fields]\n"
+            "data": "root\n |-- ID: string (nullable \u003d true)\n |-- Store: string (nullable \u003d true)\n |-- CrustDescription: string (nullable \u003d true)\n |-- Topping: string (nullable \u003d true)\n |-- Diameter: double (nullable \u003d true)\n\nCreated View for df\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: string, Store: string ... 3 more fields]\n\u001b[1m\u001b[34mdfView\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [ID: string, Store: string ... 3 more fields]\n"
           }
         ]
       },
@@ -471,10 +512,10 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d8"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d19"
             },
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d9"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d20"
             }
           ],
           "interpreterSettingId": "spark"
@@ -484,14 +525,14 @@
       "jobName": "paragraph_1628695906478_1203559310",
       "id": "paragraph_1628695906478_1203559310",
       "dateCreated": "2021-08-11 15:31:46.478",
-      "dateStarted": "2021-08-11 18:26:11.100",
-      "dateFinished": "2021-08-11 18:26:11.541",
+      "dateStarted": "2021-08-12 13:20:56.506",
+      "dateFinished": "2021-08-12 13:20:56.806",
       "status": "FINISHED"
     },
     {
       "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\norder by Diameter\n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:33:32.415",
+      "dateUpdated": "2021-08-12 13:06:28.587",
       "progress": 0,
       "config": {
         "colWidth": 12.0,
@@ -634,7 +675,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d12"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d10"
             }
           ],
           "interpreterSettingId": "spark"
@@ -644,14 +685,14 @@
       "jobName": "paragraph_1628695996455_1929422375",
       "id": "paragraph_1628695996455_1929422375",
       "dateCreated": "2021-08-11 15:33:16.456",
-      "dateStarted": "2021-08-11 18:28:59.131",
-      "dateFinished": "2021-08-11 18:28:59.300",
+      "dateStarted": "2021-08-12 13:06:28.604",
+      "dateFinished": "2021-08-12 13:06:28.982",
       "status": "FINISHED"
     },
     {
-      "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\nwhere CrustDescription\u003d\"DeepPan\"\n",
+      "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\nwhere CrustDescription\u003d\"DeepPan\"",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 18:55:58.210",
+      "dateUpdated": "2021-08-12 13:06:29.004",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -663,7 +704,6 @@
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
         "fontSize": 9.0,
-        "editorHide": false,
         "results": {
           "0": {
             "graph": {
@@ -672,55 +712,7 @@
               "optionOpen": false,
               "setting": {
                 "table": {
-                  "tableGridState": {
-                    "columns": [
-                      {
-                        "name": "Store0",
-                        "visible": true,
-                        "width": "*",
-                        "sort": {
-                          "priority": 0.0,
-                          "direction": "asc"
-                        },
-                        "filters": [
-                          {}
-                        ],
-                        "pinned": ""
-                      },
-                      {
-                        "name": "CrustDescription1",
-                        "visible": true,
-                        "width": "*",
-                        "sort": {},
-                        "filters": [
-                          {}
-                        ],
-                        "pinned": ""
-                      },
-                      {
-                        "name": "Diameter2",
-                        "visible": true,
-                        "width": "*",
-                        "sort": {},
-                        "filters": [
-                          {}
-                        ],
-                        "pinned": ""
-                      }
-                    ],
-                    "scrollFocus": {},
-                    "selection": [],
-                    "grouping": {
-                      "grouping": [],
-                      "aggregations": [],
-                      "rowExpandedStates": {}
-                    },
-                    "treeView": {},
-                    "pagination": {
-                      "paginationCurrentPage": 1.0,
-                      "paginationPageSize": 250.0
-                    }
-                  },
+                  "tableGridState": {},
                   "tableColumnTypeState": {
                     "names": {
                       "Store": "string",
@@ -737,18 +729,6 @@
                   },
                   "updated": false,
                   "initialized": false
-                },
-                "lineChart": {
-                  "rotate": {
-                    "degree": "-45"
-                  },
-                  "xLabelStatus": "default"
-                },
-                "stackedAreaChart": {
-                  "rotate": {
-                    "degree": "-45"
-                  },
-                  "xLabelStatus": "default"
                 },
                 "multiBarChart": {
                   "rotate": {
@@ -801,24 +781,24 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d19"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d11"
             }
           ],
           "interpreterSettingId": "spark"
         }
       },
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1628707701036_332691212",
-      "id": "paragraph_1628707701036_332691212",
-      "dateCreated": "2021-08-11 18:48:21.036",
-      "dateStarted": "2021-08-11 18:55:58.224",
-      "dateFinished": "2021-08-11 18:55:58.305",
+      "jobName": "paragraph_1628715983045_1140509595",
+      "id": "paragraph_1628715983045_1140509595",
+      "dateCreated": "2021-08-11 21:06:23.045",
+      "dateStarted": "2021-08-12 13:06:29.035",
+      "dateFinished": "2021-08-12 13:06:29.258",
       "status": "FINISHED"
     },
     {
       "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\nwhere CrustDescription\u003d\"ThinNCrispy\" or CrustDescription\u003d\"ThinCrust\" \n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 19:01:03.457",
+      "dateUpdated": "2021-08-12 13:06:29.335",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -968,7 +948,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d20"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d12"
             }
           ],
           "interpreterSettingId": "spark"
@@ -978,14 +958,14 @@
       "jobName": "paragraph_1628708410779_2079219309",
       "id": "paragraph_1628708410779_2079219309",
       "dateCreated": "2021-08-11 19:00:10.779",
-      "dateStarted": "2021-08-11 19:01:03.475",
-      "dateFinished": "2021-08-11 19:01:03.615",
+      "dateStarted": "2021-08-12 13:06:29.354",
+      "dateFinished": "2021-08-12 13:06:29.519",
       "status": "FINISHED"
     },
     {
       "text": "%spark.sql\nselect Store,CrustDescription, Diameter\nfrom df\nwhere CrustDescription\u003d\"ClassicCrust\" or CrustDescription\u003d\"MidCrust\" \n",
       "user": "anonymous",
-      "dateUpdated": "2021-08-11 19:02:51.220",
+      "dateUpdated": "2021-08-12 13:06:29.554",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -1135,7 +1115,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://8d90ae42a783:4040/jobs/job?id\u003d21"
+              "jobUrl": "http://6bc31363ef08:4040/jobs/job?id\u003d13"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1145,39 +1125,9 @@
       "jobName": "paragraph_1628708483011_634655722",
       "id": "paragraph_1628708483011_634655722",
       "dateCreated": "2021-08-11 19:01:23.011",
-      "dateStarted": "2021-08-11 19:02:32.732",
-      "dateFinished": "2021-08-11 19:02:32.812",
+      "dateStarted": "2021-08-12 13:06:29.571",
+      "dateFinished": "2021-08-12 13:06:29.667",
       "status": "FINISHED"
-    },
-    {
-      "text": "ThinCrust\n",
-      "user": "anonymous",
-      "dateUpdated": "2021-08-11 19:01:32.707",
-      "progress": 0,
-      "config": {
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "fontSize": 9.0,
-        "results": {},
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "runtimeInfos": {},
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1628706453320_308726334",
-      "id": "paragraph_1628706453320_308726334",
-      "dateCreated": "2021-08-11 18:27:33.320",
-      "status": "READY"
     }
   ],
   "name": "Parquet example",
@@ -1190,5 +1140,7 @@
   "config": {
     "isZeppelinNotebookCronEnable": false
   },
-  "info": {}
+  "info": {
+    "isRunning": false
+  }
 }
